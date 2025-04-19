@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        body {
+            background-color: gray;
+        }
+
+        section {
+            width: 70%;
+            height: fit-content;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        div.topic {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10%;
+
+        }
+
+        div.content {
+            width: 150px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        div.two {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        div.three {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #one {
+            background-color: red;
+        }
+
+        #two {
+            background-color: yellow;
+        }
+
+        #three {
+            background-color: blue;
+        }
+
+        #four {
+            background-color: orange;
+        }
+
+        #five {
+            background-color: purple;
+        }
+
+        #six {
+            background-color: lightgreen;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<section>
+    <div class="topic">Java Script Queue</div>
+    <div class="one">
+        <div class="content" id="one"></div>
+    </div>
+    <hr>
+    <div class="two">
+        <div class="content" id="two"></div>
+        <div class="content" id="three"></div>
+        <div class="content" id="four"></div>
+        <div class="content" id="five"></div>
+    </div>
+    <hr>
+    <div class="three">
+        <div class="content" id="six"></div>
+    </div>
+</section>
+
+<script>
+
+    let colors = ['red','yellow','blue','orange','purple','lightgreen']
+
+    const updateColors = () => {
+        const lastColor = colors.pop();
+        colors.unshift(lastColor);
+
+        colors.map((color, index) => {
+            document.getElementsByClassName('content')[index].style.background = color;
+        })
+    }
+
+    setInterval(updateColors, 1000);
+
+</script>
+
+</body>
+</html>
