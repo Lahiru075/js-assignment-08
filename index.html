@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        section {
+            display: flex;
+            justify-content: space-evenly;
+            width: 60vw;
+            margin-top: 5%;
+        }
+
+        div.man {
+            position: relative;
+            margin-top: 9%;
+        }
+
+        p {
+            position: absolute;
+            top: 10%;
+            right: 20%;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<section>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>A</p></div>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>B</p></div>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>C</p></div>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>D</p></div>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>E</p></div>
+    <div class="man"><img src="Assets/Sports%20Gif.gif" width="190"><p>F</p></div>
+    <div><img src="Assets/4ae66e59-2953-46f5-8691-11f35d8155e1.jpg" width="300"></div>
+</section>
+
+<script>
+
+    let arr = ['A','B','C','D','E','F'];
+
+    const updateLetters = () => {
+        let lastLetter = arr.pop();
+        arr.unshift(lastLetter);
+
+        arr.map((item, index) => {
+            document.getElementsByTagName('p')[index].innerHTML = item;
+        })
+    }
+
+    setInterval(updateLetters, 1000);
+
+</script>
+
+</body>
+</html>
